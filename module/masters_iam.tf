@@ -62,6 +62,14 @@ data "aws_iam_policy_document" "masters" {
       "ec2:CreateTags",
       "ec2:CreateVolume",
       "ec2:ModifyInstanceAttribute",
+      "ec2:CreateNetworkInterface",
+      "ec2:AttachNetworkInterface",
+      "ec2:DeleteNetworkInterface",
+      "ec2:DetachNetworkInterface",
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:DescribeInstances",
+      "ec2:ModifyNetworkInterfaceAttribute",
+      "ec2:AssignPrivateIpAddresses",
     ]
 
     resources = ["*"]

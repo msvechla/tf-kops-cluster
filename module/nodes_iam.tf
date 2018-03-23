@@ -34,9 +34,21 @@ resource "aws_iam_policy" "nodes" {
 
 data "aws_iam_policy_document" "nodes" {
   statement {
-    sid       = "kopsK8sEC2NodePerms"
-    effect    = "Allow"
-    actions   = ["ec2:Describe*"]
+    sid    = "kopsK8sEC2NodePerms"
+    effect = "Allow"
+
+    actions = [
+      "ec2:Describe*",
+      "ec2:CreateNetworkInterface",
+      "ec2:AttachNetworkInterface",
+      "ec2:DeleteNetworkInterface",
+      "ec2:DetachNetworkInterface",
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:DescribeInstances",
+      "ec2:ModifyNetworkInterfaceAttribute",
+      "ec2:AssignPrivateIpAddresses",
+    ]
+
     resources = ["*"]
   }
 
